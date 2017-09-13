@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+    <html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+    <![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+        <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR" lang="pt-BR">
+        <!--<![endif]-->
+        
+<head>
+    <title>Palestra, Uma introdução ao React &amp; Arquitetura em Flux | Bruno Messias</title>
+    <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Bruno Messias">
+<meta property='og:locale' content='pt_BR'>
+<meta property='og:url' content='http://brunomessias.com/2016/04/16/palestra-uaijug/index.html'>
+<meta property='og:author' content='http://facebook.com/messias.physics'>
+<meta property="article:publisher" content="http://facebook.com/messias.physics" />
+<meta property='og:site_name' content='Bruno Messias-Físico, Desenvolvedor'>
+<meta property='og:description' content='Reactjs e Flux com Bruno Messias, palestra proferida no encontro do UaiJug'>
+<meta property='description' content='Reactjs e Flux com Bruno Messias, palestra proferida no encontro do UaiJug'>
+<meta property='og:title' content="Palestra, Uma introdução ao React & Arquitetura em Flux">
+<meta property='og:description' content='Reactjs e Flux com Bruno Messias, palestra proferida no encontro do UaiJug'>
+<meta property='og:locale' content='pt_BR'>
+
+    <meta name="keywords" content="[object Object]" />
+    <meta property='og:image'content='http://img.youtube.com/vi/n5hPBlZtQOo/0.jpg'/>
+    <meta property='og:image:type' content='image/jpeg'>
+    <meta property='og:type' content='article'>
+
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+    <!--<link rel="alternate" href="/atom.xml" title="Bruno Messias" type="application/atom+xml">-->
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+        <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+        <![endif]-->
+        <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+        <!--[if IE]>
+            <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+            <![endif]-->
+            <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+            <script src="/js/jquery-1.11.1.min.js"></script>
+            <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+            <!-- Load these in the <head> for quicker IE8+ load times -->
+            <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+                <script src="/js/html5shiv.min.js"></script>
+                <script src="/js/respond.min.js"></script>
+                <![endif]-->
+                
+                
+                    <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+                
+                
+                <!---->
+  <style>
+.col-md-8.col-md-offset-2.opening-statement img{display:none;}
+
+  </style>
+            </head>
+
+        <body id="index" class="lightnav animsition">
+            <div class='siteContent'>
+                
+                    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+    <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+        <img src="/img/close.png" alt="Fechar"/>
+    </div>
+    <!-- Lists in Slidebars -->
+    <ul class="sb-menu">
+        <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+        <li><a href="/archives" class="animsition-link" title="archive">Arquivos</a></li>
+        <!-- Dropdown Menu -->
+        
+            <li>
+                <a class="sb-toggle-submenu">Projetos  & Trabalhos<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+
+                        <li><a href="/recicla-aqui" target="_BLANK" class="animsition-link">
+                            Recicla Aqui
+                        </a></li>
+                    
+
+                        <li><a href="/brasil-livre" target="_BLANK" class="animsition-link">
+                            Brasil Livre
+                        </a></li>
+                    
+
+                        <li><a href="https://pythontriangulo.github.io/ " target="_BLANK" class="animsition-link">
+                            Comunidade Python
+                        </a></li>
+                    
+                </ul>
+            </li>
+        
+        
+        
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="http://www.infis.ufu.br/gnano" class="animsition-link">Grupo de Nanociências</a></li>
+                    
+                </ul>
+            </li>
+        
+    </ul>
+    <!-- Lists in Slidebars -->
+    <ul class="sb-menu secondary">
+        <li><a href="/quem-e-bruno-messias/" class="animsition-link" title="quem-e-bruno-messias">Sobre Mim</a></li>
+        <!--<li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>-->
+    </ul>
+</div>
+<!-- ============================ END Off-canvas navigation =========================== -->
+<!-- ============================ #sb-site Main Page Wrapper =========================== -->
+<div id="sb-site">
+    <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+    <!-- ============================ Header & Logo bar =========================== -->
+    <div id="navigation" class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- Nav logo -->
+                <div class="logo"
+                     style='font-size: 10px;
+                     line-height: 11px;
+                     font-weight: 500;
+                     font-family: serif;'>
+                    <a href="/" title="Logo" class="animsition-link">
+                        <!--|<span style='color:white'>0</span>|0|<span style='color:white'>0</span>|<br>-->
+                        <!--|<span style='color:white'>0</span>|<span style='color:white'>0</span>|0|<br>-->
+                        <!--|0|0|0| -->
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                    </a>
+                </div>
+                <!-- // Nav logo -->
+                <!-- Info-bar -->
+                <nav>
+                    <ul class="nav">
+                        <li><a href="/" class="animsition-link">Bruno Messias</a></li>
+                        <!--<li class="nolink"><span>Always </span>Creative.</li>-->
+                        
+                            <li>
+                                <a
+                                style='display:block!important'
+                                href="https://github.com/devmessias" title="Github" target="_blank">
+                                <i
+                                style='display:block!important'
+                                    class="icon-github"></i></a></li>
+                        
+                        
+                        
+                            <li><a
+                                style='display:block!important'
+                                                                                                  href="https://www.facebook.com/messias.physics" title="Facebook" target="_blank">
+                                <i
+
+                                style='display:block!important'
+                                                                                                      class="icon-facebook"></i></a></li>
+                        
+                        
+                        
+                        <li class="nolink"><span>Bem Vindo!</span></li>
+                    </ul>
+                </nav>
+                <!--// Info-bar -->
+            </div>
+            <!-- // .container -->
+            <div class="learnmore sb-toggle-right">Mais</div>
+            <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Fechar</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+            </button>
+        </div>
+        <!-- // .navbar-inner -->
+    </div>
+
+                
+                
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+                <span class="post-meta">
+      <time datetime="2016-04-16T13:39:26.000Z" itemprop="datePublished">
+          2016-04-16
+      </time>
+    
+    
+    | 
+    <a href='/tags/react-flux-palestra/'>react, flux, palestra</a>
+    
+    
+</span>
+
+                
+
+                <h1>Palestra, Uma introdução ao React & Arquitetura em Flux</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class='text-justify'>
+                <p>Não estava no meu melhor dia, mas espero que seja útil</p>
+<p><a href="https://www.youtube.com/playlist?list=PL4BwC1xSlf6PzRT4GePe2Tu8GG3co43CW" title="Video Title" target="_blank" rel="external"><img src="http://img.youtube.com/vi/n5hPBlZtQOo/0.jpg" alt="IMAGE ALT TEXT"></a></p>
+
+            </div>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/05/31/projeto-reciclaaqui/" style="float: left;">
+        ← Projeto Recicla Aqui
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/10/15/mais-valvulas-para-seu-javascript/">
+        Mais Válvulas para seu Javascript →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo"></div>
+    </div>
+</section>
+
+
+            </div>
+            </div>
+            
+<!-- ============================ Footer =========================== -->
+
+                  <footer class="site-footer">
+    <!--<div class="container">-->
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Bruno Messias. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a> new version by Bruno Messias </p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/devmessias" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    <li><a href="https://www.facebook.com/messias.physics" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                </ul>
+            </div>
+            <!--<div class="clearfix"> </div>-->
+        <!--</div>-->
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+
+            <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+
+            
+            <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)
+},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-65032878-3', 'auto');
+ga('send', 'pageview');
+            </script>
+        </body>
+        </html>

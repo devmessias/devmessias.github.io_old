@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bruno Messias</title>
+  
+  <subtitle>Apenas um físico</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://brunomessias.com/"/>
+  <updated>2017-09-13T21:44:22.327Z</updated>
+  <id>http://brunomessias.com/</id>
+  
+  <author>
+    <name>Bruno Messias</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Project &gt; Bibcure</title>
+    <link href="http://brunomessias.com/2017/09/13/Bibcure/"/>
+    <id>http://brunomessias.com/2017/09/13/Bibcure/</id>
+    <published>2017-09-13T20:43:22.000Z</published>
+    <updated>2017-09-13T21:44:22.327Z</updated>
+    
+    <content type="html"><![CDATA[<p><img class="center-block" style="width:10%" src="https://raw.githubusercontent.com/bibcure/logo/master/logo_64x64.png"></p><p>Bibcure helps in boring tasks by keeping your bibfile up to date and normalized...also allows you to easily download all papers inside your bibtex</p><p> Bibcure helps in boring tasks by keeping your bibfile up to date and normalized.</p><p><img src="https://raw.githubusercontent.com/bibcure/logo/master/gifs/bibcure_op.gif" alt=""></p><h1 id="Requirements-Install"><a href="#Requirements-Install" class="headerlink" title="Requirements/Install"></a>Requirements/Install</h1><p>Bibcure uses the wonderful <a href="https://github.com/sciunto-org/python-bibtexparser" target="_blank" rel="external">Bibtex parser</a>. In this moment we waiting for new release of bibtexparser to solve some bugs.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo python /usr/bin/pip install bibcure</div></pre></td></tr></table></figure><h2 id="scihub2pdf-beta"><a href="#scihub2pdf-beta" class="headerlink" title="scihub2pdf(beta)"></a>scihub2pdf(beta)</h2><p><img src="https://raw.githubusercontent.com/bibcure/logo/master/sci_hub_64.png" alt="">  If you want download articles via a DOI number, article title or a bibtex file, using thedatabase of arxiv, libgen or sci-hub, see</p><p><a href="https://github.com/bibcure/scihub2pdf" target="_blank" rel="external">bibcure/scihub2pdf</a></p><h1 id="Features-and-how-to-use"><a href="#Features-and-how-to-use" class="headerlink" title="Features and how to use"></a>Features and how to use</h1><h2 id="bibcure"><a href="#bibcure" class="headerlink" title="bibcure"></a>bibcure</h2><p>Given a bib file...</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ bibcure -i input.bib -o output.bib</div></pre></td></tr></table></figure><ul><li><p>check sure the Arxiv items have been published, then update them(requiresinternet connection)</p></li><li><p>complete all fields(url, journal, etc) of all bib items using DOI number(requiresinternet connection)</p></li><li><p>find and create DOI number associated with each bib item which has notDOI field(requiresinternet connection)</p></li><li><p>abbreviate jorunals names</p></li></ul><h2 id="arxivcheck"><a href="#arxivcheck" class="headerlink" title="arxivcheck"></a>arxivcheck</h2><p>Given a arxiv id...</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ arxivcheck 1601.02785</div></pre></td></tr></table></figure><ul><li>check if has been published, and then returns the updated bib (requires internet connection)</li></ul><p>Given a title...</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ arxivcheck --title An useful paper published on arxiv</div></pre></td></tr></table></figure><p>search papers related and return a bib the first item.You can easily append a bib into a bibfile, just do</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ arxivcheck --title An useful paper published on arxiv &gt;&gt; file.bib</div></pre></td></tr></table></figure><p>You also can interact with results, just pass --ask parameter</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ arxivcheck --ask --title An useful paper published on arxiv</div></pre></td></tr></table></figure><h2 id="scihub2pdf"><a href="#scihub2pdf" class="headerlink" title="scihub2pdf"></a>scihub2pdf</h2><p>Given a bibtex file</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ scihub2pdf -i input.bib</div></pre></td></tr></table></figure><p>Given a DOI number...</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ scihub2pdf 10.1038/s41524-017-0032-0</div></pre></td></tr></table></figure><p>Given arxivId...</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ scihub2pdf arxiv:1708.06891</div></pre></td></tr></table></figure><p>Given a title...</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ scihub2bib --title An useful paper</div></pre></td></tr></table></figure><p>or arxiv...</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ scihub2bib --title arxiv:An useful paper</div></pre></td></tr></table></figure><p>Location folder as argument</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ scihub2pdf -i input.bib -l somefoler/</div></pre></td></tr></table></figure><p>Use libgen instead sci-hub</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ scihub2pdf -i input.bib --uselibgen</div></pre></td></tr></table></figure><h2 id="doi2bib"><a href="#doi2bib" class="headerlink" title="doi2bib"></a>doi2bib</h2><p>Given a DOI number...</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ doi2bib 10.1038/s41524-017-0032-0</div></pre></td></tr></table></figure><ul><li>get bib item given a doi(requiresinternet connection)</li></ul><p>You can easily appenda bib into a bibfile, just do</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ doi2bib 10.1038/s41524-017-0032-0 &gt;&gt; file.bib</div></pre></td></tr></table></figure><p>You also can generate a bibtex from a txt file containing a list of DOIs</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ doi2bib --input file_with_dois.txt --output refs.bib</div></pre></td></tr></table></figure><h2 id="title2bib"><a href="#title2bib" class="headerlink" title="title2bib"></a>title2bib</h2><p>Given a title...</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ title2bib An useful paper</div></pre></td></tr></table></figure><ul><li>search papers related and return a bib for the selected paper(requiresinternet connection)</li></ul><p>You can easily appenda bib into a bibfile, just do</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ title2bib An useful paper --first &gt;&gt; file.bib</div></pre></td></tr></table></figure><p>You also can generate a bibtex from a txt file containing a list of &quot;titles&quot;</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ title2bib --input file_with_titles.txt --output refs.bib --first</div></pre></td></tr></table></figure><h2 id="Sci-Hub-vs-LibGen"><a href="#Sci-Hub-vs-LibGen" class="headerlink" title="Sci-Hub vs LibGen"></a>Sci-Hub vs LibGen</h2><h3 id="Sci-hub"><a href="#Sci-hub" class="headerlink" title="Sci-hub:"></a>Sci-hub:</h3><ul><li>Stable</li><li>Annoying CAPTCHA</li><li>Fast</li></ul><h3 id="Libgen"><a href="#Libgen" class="headerlink" title="Libgen"></a>Libgen</h3><ul><li>Unstalbe</li><li>No CAPTCHA</li><li>Slow</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img class=&quot;center-block&quot; style=&quot;width:10%&quot; src=&quot;https://raw.githubusercontent.com/bibcure/logo/master/logo_64x64.png
+&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Bibcure h
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Research &gt; Confinement and Fermion Doubling Problem in Topological Insulators</title>
+    <link href="http://brunomessias.com/2017/09/13/Confinement-and-Fermion-Doubling-Problem-in-Topological-Insulators/"/>
+    <id>http://brunomessias.com/2017/09/13/Confinement-and-Fermion-Doubling-Problem-in-Topological-Insulators/</id>
+    <published>2017-09-13T20:43:13.000Z</published>
+    <updated>2017-09-13T21:43:52.709Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://arxiv.org/abs/1708.03514" target="_blank" rel="external">Confinement and Fermion Doubling Problem in Topological Insulators</a></p><p><em>We investigate the interplay between confinement and the Fermion doubling problem in Dirac-like Hamiltonians. Individually, both features are well known. Firstly, simple electrostatic gates do not confine electrons due to the Klein tunneling. Secondly, typical lattice discretization of the first order derivative</em> $$k\mapsto−i\partial x$$ <em>skips the central point and allow spurious low-energy, highly oscillating solutions known as the Fermion doublers. While a no-go theorem states that the doublers cannot be eliminated without artificially breaking a symmetry, here we show that the symmetry broken by the Wilson&#39;s mass approach is equivalent to the enforcement of hard-wall boundary conditions, thus making the no-go theorem irrelevant when confinement is foreseen. We illustrate our arguments calculating the band structure and transport properties across thin films of the topological insulator $$Bi_2Se_3$$, for which we use ab-initio DFT calculations to justify the model.</em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1708.03514&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Confinement and Fermion Doubling Problem in Topological Insulat
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Comunidade de Software Livre &amp; Python Triângulo</title>
+    <link href="http://brunomessias.com/2016/09/10/Comunidade-de-Software-Livre-Python-Triangulo/"/>
+    <id>http://brunomessias.com/2016/09/10/Comunidade-de-Software-Livre-Python-Triangulo/</id>
+    <published>2016-09-10T23:38:33.000Z</published>
+    <updated>2016-09-22T03:00:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Fundação da Comunidade de Software Livre e Python do Triângulo Mineiro</p><h4 id="Manifesto"><a href="#Manifesto" class="headerlink" title="Manifesto"></a>Manifesto</h4><p><a href="https://github.com/PythonTriangulo/manifesto" target="_blank" rel="external">Manifesto da Comunidade</a></p><div class="col-md-6"><img src="http://brunomessias.com/img/python/01.jpg" alt="Alt text" title="Optional title"></div><div class="col-md-6"><img src="http://brunomessias.com/img/python/02.jpg" alt="Alt text" title="Optional title"></div><div class="col-md-6 col-md-offset-3 col-xs-12"><img src="http://brunomessias.com/img/python/03.jpg" alt="Alt text" title="Optional title"></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Fundação da Comunidade de Software Livre e Python do Triângulo Mineiro&lt;/p&gt;
+&lt;h4 id=&quot;Manifesto&quot;&gt;&lt;a href=&quot;#Manifesto&quot; class=&quot;headerlink&quot; tit
+      
+    
+    </summary>
+    
+    
+      <category term="Python, Software Livre" scheme="http://brunomessias.com/tags/Python-Software-Livre/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Projeto Capes - 5K cientistas utilizando</title>
+    <link href="http://brunomessias.com/2016/07/18/Projeto-Capes-4K-cientistas-utilizando/"/>
+    <id>http://brunomessias.com/2016/07/18/Projeto-Capes-4K-cientistas-utilizando/</id>
+    <published>2016-07-18T17:25:44.000Z</published>
+    <updated>2016-09-30T01:49:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>O novo sistema de periódicos da Capes (assim como o CAFe) reduz drasticamente a agilidade de busca e acesso a referências bibliográficas, pois é necessário que os usuários acessem o portal de buscas da Capes. O que acaba inutilizando o acesso a publicações via links diretos, links internos dos arquivos PDF e sistemas como o DOI.</p><p>Por isso o Prof. <a href="http://www.infis.ufu.br/gerson" target="_blank" rel="external">Gerson Ferreira</a> e esse que vos fala desenvolveram uma ferramenta que facilita a vida de nos, já aterefados cientistas. A extensão está disponível tanto para firefox quanto para chrome</p><p><a href="https://chrome.google.com/webstore/detail/redirecionamento-capes-pe/lpfcdddcpijdfghkimmcpkmidafnljbo" target="_blank" rel="external">Link para Chrome</a></p><p><a href="https://addons.mozilla.org/pt-BR/firefox/addon/redir-capes-periodicos/" target="_blank" rel="external">Link para Firefox</a></p><p>Estamos recebendo um excelente feedback da comunidade ciêntifica, com um total de mais de 5 mil usuários(firefox &amp; chrome)</p><blockquote><p>Como não fazemos a parte do time de TI da CAPES não possuímos a lista oficial, e ainda não obtivemos resposta do time de TI da CAPES</p></blockquote><!--O Primeiro passo foi obter uma lista com os domínios cadastrados no portal periódicos da CAPES.  --><!--Criando um pequeno script python conseguimos realizar uma mineração desses domínios, o que nos permitiu pré-cadastar uma lista de domínios--><p>-</p><p><img src="/img/periodicos/domainCapes.png" alt="alt text" title="Logo Title Text 1"></p><p><img src="/img/periodicos/subOpcoes.png" alt="alt text" title="Logo Title Text 1"></p><!--## Entendendo e configurando sua extensão--><!--### Modo automático--><!--### BlackList/WhiteList--><!--### Desativando as notificações--><!--## Como a extensão funciona?--><!--### Redirecionamento de requests--><!--### Como posso ajudar a melhorar a situação?--><!--## O sistema CAPES e o EzProxy--><!--## Manipulando Requisições com o Web Request (Chrome & Firefox)-->]]></content>
+    
+    <summary type="html">
+    
+      Extensão que permite ganhar agilidade ao utilizar o novo sistema de periódicos CAPES
+    
+    </summary>
+    
+    
+      <category term="Projeto, Science, javascript" scheme="http://brunomessias.com/tags/Projeto-Science-javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Projeto Brasil Livre</title>
+    <link href="http://brunomessias.com/2016/06/19/projeto-brasillivre/"/>
+    <id>http://brunomessias.com/2016/06/19/projeto-brasillivre/</id>
+    <published>2016-06-19T23:32:11.000Z</published>
+    <updated>2016-06-20T03:18:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p></p><p><img class="center-block" src="/img/brasillivre.png" alt="Alt text" title="Optional title"></p><p></p><h1 id="A-escravidao-contemporanea-no-Brasil"><a href="#A-escravidao-contemporanea-no-Brasil" class="headerlink" title="A escravidão contemporânea no Brasil"></a>A escravidão contemporânea no Brasil</h1><h3 class="text-center center-block"><a href="http://brasillivre.brunomessias.com/" target="_blank" rel="external">brasillivre.brunomessias.com</a></h3><p>Há algum tempo comecei a acompanhar notícias relacionadas ao trabalho escravo no Brasil...fiquei assustado ao ser informado  sobre como os fazendeiros e empresasestão tentando blindar os processos, ocultar informações e difamar jornalistas.</p><p><em><a href="http://oglobo.globo.com/economia/negocios/stf-proibe-ministerio-do-trabalho-de-divulgar-lista-suja-do-trabalho-escravo-14944492" target="_blank" rel="external">STF proíbe Ministério do Trabalho de divulgar lista suja do trabalho escravo</a></em></p><p><em><a href="http://cartacampinas.com.br/2016/04/friboi-da-jbs-contratou-anuncio-para-difamar-leonardo-sakamoto-diz-google/" target="_blank" rel="external">JBS, dona da Friboi, contratou anúncio para difamar jornalista, diz Google</a></em></p><p>Então objetivei criar algo que compilasse os dados sobre o trabalho escravo no Brasil e posteriormente integrasse tais dados com outras fontes de informações.</p><p>Está sendo um projeto bem interessante, pois além de envolver  mineração e tratamento de dados(para os quais estou usando python) a  construção da interface também me forneceu algumas alegrias(pela primeira vez a utilização de <a href="http://localhost:4000/2015/10/15/mais-valvulas-para-seu-javascript/" target="_blank" rel="external">Workers</a> foi realmente útil e necessária para mim, rs)</p><div class="row"><img class="col-xs-6" src="/img/brasillivre/01.png"><img class="col-xs-6" src="/img/brasillivre/02.png"></div><h2 id="Para-a-comunidade-do-Software-Livre"><a href="#Para-a-comunidade-do-Software-Livre" class="headerlink" title="Para a comunidade do Software Livre"></a>Para a comunidade do Software Livre</h2><p>Para quem se interessar pelo projeto e quiser participar ainda existemuita coisa a ser feita(consegui um parceiro para auxiliar no tratamento eagregação de dados, os quais são muito dispersos). Para o pessoal do Javascripto sistema foi feito usando React, ES6, Worker&#39;s(como o número de dados égrande, optei pela alternativa do multithreading em Js para realizar algumasoperações) e Gulp. Segue o link do repositório para quem desejar contribuir</p><h3 class="text-center center-block"><a href="https://github.com/devmessias/brasillivre/" target="_blank" rel="external">https://github.com/devmessias/brasillivre/</a></h3><p>lembrando que qualquer ajuda é bem vinda, :)</p>]]></content>
+    
+    <summary type="html">
+    
+      O objetivo desse projeto é compilar e relacionar informações sobre a escravidão contemporânea no Brasil
+    
+    </summary>
+    
+    
+      <category term="python, javascript, data mining, escravidão contemporânea" scheme="http://brunomessias.com/tags/python-javascript-data-mining-escravidao-contemporanea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Projeto Recicla Aqui</title>
+    <link href="http://brunomessias.com/2016/05/31/projeto-reciclaaqui/"/>
+    <id>http://brunomessias.com/2016/05/31/projeto-reciclaaqui/</id>
+    <published>2016-05-31T13:45:56.000Z</published>
+    <updated>2016-12-13T23:08:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>O Recicla Aqui é um projeto que desenvolvo em parceria com um amigo(Régis Maicon). Tal projeto visa inserirtecnologia no processo da coleta seletivao e aumentar a qualidade de vida dos catadores de material reciclável.</p><p>Temos três eixos norteadores:</p><h4 id="Fornecer-tecnologias-de-Gerenciamento-e-Formacao-tecnica-para-as-Cooperativas"><a href="#Fornecer-tecnologias-de-Gerenciamento-e-Formacao-tecnica-para-as-Cooperativas" class="headerlink" title="Fornecer tecnologias de  Gerenciamento e Formação técnica  para as Cooperativas"></a>Fornecer tecnologias de  Gerenciamento e Formação técnica  para as Cooperativas</h4><h4 id="Criacao-de-um-aplicativo-que-permita-conectar-Cidadoes-e-Coletores"><a href="#Criacao-de-um-aplicativo-que-permita-conectar-Cidadoes-e-Coletores" class="headerlink" title="Criação de um aplicativo que permita conectar Cidadões e Coletores"></a>Criação de um aplicativo que permita conectar Cidadões e Coletores</h4><h4 id="quot-Revitalizacao-quot-da-imagem-dos-coletores"><a href="#quot-Revitalizacao-quot-da-imagem-dos-coletores" class="headerlink" title="&quot;Revitalização&quot; da imagem dos coletores"></a>&quot;Revitalização&quot; da imagem dos coletores</h4><h4 id="quot-Alfabetizacao-Tecnologica-quot"><a href="#quot-Alfabetizacao-Tecnologica-quot" class="headerlink" title="&quot;Alfabetização Tecnológica&quot;"></a>&quot;Alfabetização Tecnológica&quot;</h4><p>O aplicativo você encontra na Goolge Play (futuramente na Apple Store)</p><p>Objetivamos utilizar as redes sociais para conscientizar a população da importancia dos catadores<a href="https://www.facebook.com/reciclaaqui/?ref=hl" target="_blank" rel="external">link</a></p><p><img src="http://brunomessias.com/img/reciclaaqui2.jpeg" alt="Alt text" title="Optional title"><img src="http://brunomessias.com/img/reciclaaqui3.png" alt="Alt text" title="Optional title"><img src="http://brunomessias.com/img/reciclaaqui4.png" alt="Alt text" title="Optional title"></p>]]></content>
+    
+    <summary type="html">
+    
+      O Recicla Aqui é um projeto que desenvolvo em parceria com um amigo(Régis Maicon). Tal projeto visa inserir
+    
+    </summary>
+    
+    
+      <category term="reciclagem, tecnologia" scheme="http://brunomessias.com/tags/reciclagem-tecnologia/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Palestra, Uma introdução ao React &amp; Arquitetura em Flux</title>
+    <link href="http://brunomessias.com/2016/04/16/palestra-uaijug/"/>
+    <id>http://brunomessias.com/2016/04/16/palestra-uaijug/</id>
+    <published>2016-04-16T13:39:26.000Z</published>
+    <updated>2016-05-31T14:02:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Não estava no meu melhor dia, mas espero que seja útil</p><p><a href="https://www.youtube.com/playlist?list=PL4BwC1xSlf6PzRT4GePe2Tu8GG3co43CW" title="Video Title" target="_blank" rel="external"><img src="http://img.youtube.com/vi/n5hPBlZtQOo/0.jpg" alt="IMAGE ALT TEXT"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      Reactjs e Flux com Bruno Messias, palestra proferida no encontro do UaiJug
+    
+    </summary>
+    
+    
+      <category term="react, flux, palestra" scheme="http://brunomessias.com/tags/react-flux-palestra/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mais Válvulas para seu Javascript</title>
+    <link href="http://brunomessias.com/2015/10/15/mais-valvulas-para-seu-javascript/"/>
+    <id>http://brunomessias.com/2015/10/15/mais-valvulas-para-seu-javascript/</id>
+    <published>2015-10-15T22:09:47.000Z</published>
+    <updated>2016-03-11T03:52:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><code><img class="center-block" style="width:80%" src="http://tableless.com.br/wp-content/uploads/2015/09/3033642-poster-p-1-first-look-mad-max.jpg"></code></p><p>Enquanto você pensa sobre como resolver um bug em seu código e ao mesmo tempobalança a cadeira e inconscientemente levanta o braço para tomar mais umaxícara de café, seu cérebro está realizando algo que talvez possamos chamar demultithreading. Esses pequenos atos do dia-a-dia parecem indicar que estarconsciente não atrapalha a sua interface (corpo) de agir da maneira correta.</p><p>Escrevi um artigo na comunidade do Tableless a respeito de como podemos construir sistemas web que são capazes de realizar multithreading, algo que não é muito utilizado hoje em dia.</p><p>O artigo pode ser acessado aqui<a href="http://tableless.com.br/mais-valvulas-para-seu-javascript/" target="_blank" rel="external">http://tableless.com.br/mais-valvulas-para-seu-javascript/</a></p><h2 id="OFF-Fiquei-muito-feliz-em-ser-citado-no-BrasilJs"><a href="#OFF-Fiquei-muito-feliz-em-ser-citado-no-BrasilJs" class="headerlink" title="OFF - Fiquei muito feliz em ser citado no BrasilJs"></a>OFF - Fiquei muito feliz em ser citado no BrasilJs</h2><p><a href="http://www.youtube.com/watch?v=GGJzLn36IKc" title="Video Title" target="_blank" rel="external"><img src="http://img.youtube.com/vi/GGJzLn36IKc/0.jpg" alt="IMAGE ALT TEXT"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      Multi-threading para o navegador  Aprenda a explorar o poder dos nucleos do computador
+    
+    </summary>
+    
+    
+      <category term="Javascript, HTML5, WebWorkers, Desempenho" scheme="http://brunomessias.com/tags/Javascript-HTML5-WebWorkers-Desempenho/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Demo sem Deploy. Disponibilize seu projeto de forma rápida e segura</title>
+    <link href="http://brunomessias.com/2015/09/30/demo-sem-deploy-disponibilize-seu-projeto-de-forma-rapida-e-segura/"/>
+    <id>http://brunomessias.com/2015/09/30/demo-sem-deploy-disponibilize-seu-projeto-de-forma-rapida-e-segura/</id>
+    <published>2015-09-30T20:24:56.000Z</published>
+    <updated>2016-03-11T03:11:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Imagine que você está desenvolvendo um projeto e precisa apresentar oprotótipo, ou mesmo o sistema pronto, para outra pessoa da equipe ou clienteque não se encontra presente no local. O seu cliente quer testar, ver, clicar,mas você não colocou o sistema no ar. Como resolver tal problema?</p><p>Escrevi um post no Tableless sobre uma   uma solução para o problema acima. Aqual permite que com apenas a execução do seguinte comando</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">user@tableless:~/site$ ngrok http -subdomain=umNomeParaMeuDominio 8000</div></pre></td></tr></table></figure><p>O artigo pode ser acessado aqui<a href="http://tableless.com.br/demo-sem-deploy-disponibilize-seu-projeto-de-forma-rapida-e-segura/" target="_blank" rel="external">http://tableless.com.br/demo-sem-deploy-disponibilize-seu-projeto-de-forma-rapida-e-segura/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      Use o ngrok para disponibilizar seu sitema para o público de forma rápida e segura
+    
+    </summary>
+    
+    
+      <category term="deploy, desenvolvimento web, devops" scheme="http://brunomessias.com/tags/deploy-desenvolvimento-web-devops/"/>
+    
+  </entry>
+  
+</feed>
