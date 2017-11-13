@@ -41,19 +41,19 @@
   </entry>
   
   <entry>
-    <title>Research &gt; Confinement and Fermion Doubling Problem in Topological Insulators</title>
+    <title>Research &gt; Confinement and Fermion Doubling Problem in Dirac-like Hamiltonians</title>
     <link href="http://brunomessias.com/2017/09/13/Confinement-and-Fermion-Doubling-Problem-in-Topological-Insulators/"/>
     <id>http://brunomessias.com/2017/09/13/Confinement-and-Fermion-Doubling-Problem-in-Topological-Insulators/</id>
     <published>2017-09-13T20:43:13.000Z</published>
-    <updated>2017-09-13T21:43:52.709Z</updated>
+    <updated>2017-11-13T18:52:52.607Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://arxiv.org/abs/1708.03514" target="_blank" rel="external">Confinement and Fermion Doubling Problem in Topological Insulators</a></p><p><em>We investigate the interplay between confinement and the Fermion doubling problem in Dirac-like Hamiltonians. Individually, both features are well known. Firstly, simple electrostatic gates do not confine electrons due to the Klein tunneling. Secondly, typical lattice discretization of the first order derivative</em> $$k\mapsto−i\partial x$$ <em>skips the central point and allow spurious low-energy, highly oscillating solutions known as the Fermion doublers. While a no-go theorem states that the doublers cannot be eliminated without artificially breaking a symmetry, here we show that the symmetry broken by the Wilson&#39;s mass approach is equivalent to the enforcement of hard-wall boundary conditions, thus making the no-go theorem irrelevant when confinement is foreseen. We illustrate our arguments calculating the band structure and transport properties across thin films of the topological insulator $$Bi_2Se_3$$, for which we use ab-initio DFT calculations to justify the model.</em></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.161113" target="_blank" rel="external">Confinement and Fermion Doubling Problem in Dirac-like Hamiltonians</a></p><p><em>We investigate the interplay between confinement and the Fermion doubling problem in Dirac-like Hamiltonians. Individually, both features are well known. Firstly, simple electrostatic gates do not confine electrons due to the Klein tunneling. Secondly, typical lattice discretization of the first order derivative</em> $$k\mapsto−i\partial x$$ <em>skips the central point and allow spurious low-energy, highly oscillating solutions known as the Fermion doublers. While a no-go theorem states that the doublers cannot be eliminated without artificially breaking a symmetry, here we show that the symmetry broken by the Wilson&#39;s mass approach is equivalent to the enforcement of hard-wall boundary conditions, thus making the no-go theorem irrelevant when confinement is foreseen. We illustrate our arguments calculating the band structure and transport properties across thin films of the topological insulator $$Bi_2Se_3$$, for which we use ab-initio DFT calculations to justify the model.</em></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1708.03514&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Confinement and Fermion Doubling Problem in Topological Insulat
+        &lt;p&gt;&lt;a href=&quot;https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.161113&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Confinement and Fermion Doublin
       
     
     </summary>
